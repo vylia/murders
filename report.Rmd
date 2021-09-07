@@ -2,7 +2,7 @@
 title: "Report on Gun Murders"
 author: "Rafael Irizarry"
 date: "`r format(Sys.Date())`"
-output: word_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -32,6 +32,6 @@ We note the large state to state variability by generating a barplot showing the
 ```{r murder-rate-by-state, echo=FALSE}
 murders %>% mutate(abb = reorder(abb, rate)) %>%
   ggplot(aes(abb, rate)) +
-  geom_bar(width = 0.5, stat = "identity", color = "black") +
+  geom_bar(width = 0.5, stat = "identity", color = "blue") +
   coord_flip()
 ```
